@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Cristina Popescu și Vlad Marianciuc">
+<meta name="dcterms.date" content="2024-04-30">
+
+<title>analiza-CRIX.github.io - Proiect Matematici Financiare</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">analiza-CRIX.github.io</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introducere" id="toc-introducere" class="nav-link active" data-scroll-target="#introducere">Introducere</a></li>
+  <li><a href="#metode" id="toc-metode" class="nav-link" data-scroll-target="#metode">Metode</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#discuții-și-concluzii" id="toc-discuții-și-concluzii" class="nav-link" data-scroll-target="#discuții-și-concluzii">Discuții și Concluzii</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Proiect Matematici Financiare</h1>
+<p class="subtitle lead">Analiza comparativa a indicelui CRIX cu Bitcoin și Ethereum într-un segment de timp</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Cristina Popescu și Vlad Marianciuc </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 30, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Abstract</div>
+    Lucrarea compară din punct de vedere al randamentului și al volatilității indicele CRIX și două din cele mai cunoscute și tranzacționate monede, Bitcoin și Ethereum. Comparația este realizată relativ față de primul an de pandemie. Odată cu creșterea digitalizării în acel an, vrem să ilustrăm creșterea pieței crypto și să vedem corelarea dintre Bitcoin, Ethereum și indicele CRIX.
+  </div>
+</div>
+
+</header>
+
+<section id="introducere" class="level2">
+<h2 class="anchored" data-anchor-id="introducere">Introducere</h2>
+<p>Vedem cum în lumea de azi digitalul este din ce în ce mai prezent în viețile noastre, în special în „buzunarele” noastre - următoarea generație, copiii pe care unii dintre noi îi vom avea, s-ar putea să fie primii care nu vor folosi deloc bani fizici în decursul vieții lor. Câteva generații mai târziu, aceștia se vor uita în urmă la vremurile apuse când plăteai cu „hârtie, plastic sau metal”.</p>
+<p>Astăzi este ușor de înțeles ascensiunea rapidă a valutelor digitale, numite criptomonede. Totuși, pe cât de rapidă este această ascensiune, pe atât de volatilă și nepredictibilă este evoluția lor. Numărul criptomonedelor crește, atât ca tranzacții dar și ca criptomonede în sine (constant apar noi tipuri de astfel de valute digitale - vezi Dogecoin, NFT-uri), iar în acest context putem vorbi despre o piață a acestor monede în care există jucători mai mari și mai mici, jucători care influențează și dau direcție cursului de evoluție și jucători mai mici cu randamente spectaculoase dar cu puțin impact în jurul lor. Cum această piață are impact global (de exemplu El Salvador a adoptat Bitcoin ca mijloc legal de plată pe teritoriul său), este important să existe un indice de piață care să incapsuleze în modelul său comportamentul pieței criptomonedelor ca un întreg.</p>
+<p>Acest indice se numește CRIX (CRyptocurrency IndeX) și a fost gândit de o echipă de cercetători de la universitatea Humboldt, Berlin condusă de Wolfgang Karl Härdle. El permite urmărirea evoluției unei piețe cripto diverse și în schimbare rapidă, folosind un număr mic de constituenți.</p>
+<p>Luând în considerare că două din cele mai cunoscute și tranzacționate valute pe piața cripto sunt Bitcoin și Ethereum (și cele mai vechi), ne putem întrebarile:</p>
+<ol type="1">
+<li><p>Cât de mult se asemeană evoluția acestor monede cu performanța pe care o indică indicele CRIX ?</p></li>
+<li><p>Care este corelarea dintre indicele CRIX și Bitcoin, respectiv Ethereum?</p></li>
+<li><p>Care este formula matematică prin care indicele CRIX este calculat?</p></li>
+</ol>
+</section>
+<section id="metode" class="level2">
+<h2 class="anchored" data-anchor-id="metode">Metode</h2>
+<p>I. Pentru a răspunde primelor 2 întrebări:</p>
+<ul>
+<li><p>vom lua date istorice zilnice ale indicelui și ale celor 2 valute și vom prezenta evoluția de ansamblu acestora între anii 2014-2022</p></li>
+<li><p>vom prezenta evoluția acestora în perioada pandemiei (o perioadă în care digitalizarea a crescut forțat fapt ce a dus la creșterea pieței cripto). Am ales o perioadă de 410 zile calendaristice, începând din 2 ianuarie 2020 până pe 15 februarie 2021. Data de început corespunde cu începutul pandemiei și începerea restricțiilor iar finalul corespunde cu 2 luni după ce a început distribuirea vaccinului anti-Covid.</p></li>
+<li><p>vom calcula randamentul zilnic și anual, volatilitatea zilnică și anuală și corelarea dintre ele</p></li>
+</ul>
+<p>II. Pentru ultima întrebare vom consulta articolul scris de Simon Trimborn și Wolfgang Karl Härdle „CRIX an Index for blockchain based Currencies” și vom prezenta succint unele aspecte importante din construcția indicelui CRIX.</p>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<section id="i.-interpretarea-datelor" class="level5">
+<h5 class="anchored" data-anchor-id="i.-interpretarea-datelor"><b>I. Interpretarea datelor</b></h5>
+<p>Încărcarea librăriilor.</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"jsonlite"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Datele CRIX le-am luat de pe thecrix.de iar datele Bitcoin și Ethereum le-am luat de pe investing.com.</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>json_file <span class="ot">&lt;-</span> <span class="st">"http://data.thecrix.de/data/crix.json"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data_crix <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(json_file)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>data_btc <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"H:</span><span class="sc">\\</span><span class="st">My Drive</span><span class="sc">\\</span><span class="st">Matematica</span><span class="sc">\\</span><span class="st">Proiect Analiza Financiara</span><span class="sc">\\</span><span class="st">Bitcoin Historical Data (1).csv"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>data_btc <span class="ot">&lt;-</span> data_btc[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">7</span>)]</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>data_eth <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"H:</span><span class="sc">\\</span><span class="st">My Drive</span><span class="sc">\\</span><span class="st">Matematica</span><span class="sc">\\</span><span class="st">Proiect Analiza Financiara</span><span class="sc">\\</span><span class="st">Ethereum Historical Data.csv"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>data_eth <span class="ot">&lt;-</span> data_eth[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">7</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Am format seturile de date astfel încât să le pot manipula cu funcțiile din R.</p>
+<p>Observație: Am vrut ca ziua înregistrării să fie de tip „dată” iar prețul să fie de tip „double”</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data_btc<span class="sc">$</span>Date <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(data_btc<span class="sc">$</span>Date, <span class="st">'%m/%d/%Y'</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>data_eth<span class="sc">$</span>Date <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(data_eth<span class="sc">$</span>Date, <span class="st">'%m/%d/%Y'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>data_crix<span class="sc">$</span>date <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(data_crix<span class="sc">$</span>date, <span class="st">'%Y-%m-%d'</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>data_crix<span class="sc">$</span>price <span class="ot">&lt;-</span> <span class="fu">as.double</span>(data_crix<span class="sc">$</span>price)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>data_btc<span class="sc">$</span>Price <span class="ot">&lt;-</span> <span class="fu">parse_number</span>(data_btc<span class="sc">$</span>Price)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>data_eth<span class="sc">$</span>Price <span class="ot">&lt;-</span> <span class="fu">parse_number</span>(data_eth<span class="sc">$</span>Price)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Evoluția de ansamblu a celor 3 între anii 2014-2022</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data_crix, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="st">"blue3"</span>, <span class="at">lwd =</span> <span class="dv">3</span>, <span class="at">xlab =</span> <span class="st">"Date"</span>, <span class="at">ylab =</span> <span class="st">"Price"</span>, <span class="at">cex.lab =</span> <span class="fl">1.5</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main=</span><span class="st">"CRIX index Performance"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/plot-initial-1.png" class="img-fluid" width="672"></p>
+</div>
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data_btc, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="st">"blue3"</span>, <span class="at">lwd =</span> <span class="dv">3</span>, <span class="at">xlab =</span> <span class="st">"Date"</span>, <span class="at">ylab =</span> <span class="st">"Price"</span>, <span class="at">cex.lab =</span> <span class="fl">1.5</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main=</span><span class="st">"Bitcoin Performance"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/plot-initial-2.png" class="img-fluid" width="672"></p>
+</div>
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data_eth, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="st">"blue3"</span>, <span class="at">lwd =</span> <span class="dv">3</span>, <span class="at">xlab =</span> <span class="st">"Date"</span>, <span class="at">ylab =</span> <span class="st">"Price"</span>, <span class="at">cex.lab =</span> <span class="fl">1.5</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main=</span><span class="st">"Ethereum Performance"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/plot-initial-3.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Filtrarea seturilor de date pentru intervalul 2 ianuarie 2020 - 15 februarie 2021.</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data_c <span class="ot">&lt;-</span> data_crix <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(date <span class="sc">&gt;</span> <span class="st">"2020-01-02"</span>, date <span class="sc">&lt;</span> <span class="st">"2021-02-16"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>data_b <span class="ot">&lt;-</span> data_btc <span class="sc">%&gt;%</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Date <span class="sc">&gt;</span> <span class="st">"2020-01-01"</span>, Date <span class="sc">&lt;</span> <span class="st">"2021-02-15"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>data_e <span class="ot">&lt;-</span> data_eth <span class="sc">%&gt;%</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Date <span class="sc">&gt;</span> <span class="st">"2020-01-01"</span>, Date <span class="sc">&lt;</span> <span class="st">"2021-02-15"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">t</span>(data_b))</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">t</span>(<span class="fu">rev</span>(x)))</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>data_b <span class="ot">&lt;-</span> x</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>data_b<span class="sc">$</span>Price <span class="ot">&lt;-</span> <span class="fu">parse_number</span>(data_b<span class="sc">$</span>Price)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>data_b<span class="sc">$</span>Date <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(data_b<span class="sc">$</span>Date)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">t</span>(data_e))</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">t</span>(<span class="fu">rev</span>(y)))</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>data_e <span class="ot">&lt;-</span> y</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>data_e<span class="sc">$</span>Price <span class="ot">&lt;-</span> <span class="fu">parse_number</span>(data_e<span class="sc">$</span>Price)</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>data_e<span class="sc">$</span>Date <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(data_e<span class="sc">$</span>Date)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Plotarea evoluției în intervalul specific.</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data_c, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="st">"blue3"</span>, <span class="at">lwd =</span> <span class="dv">3</span>, <span class="at">xlab =</span> <span class="st">"Date"</span>, <span class="at">ylab =</span> <span class="st">"Price"</span>, <span class="at">cex.lab =</span> <span class="fl">1.5</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main=</span><span class="st">"CRIX index Performance"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/plot-filtered-1.png" class="img-fluid" width="672"></p>
+</div>
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data_b, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="st">"blue3"</span>, <span class="at">lwd =</span> <span class="dv">3</span>, <span class="at">xlab =</span> <span class="st">"Date"</span>, <span class="at">ylab =</span> <span class="st">"Price"</span>, <span class="at">cex.lab =</span> <span class="fl">1.5</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main=</span><span class="st">"Bitcoin Performance"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/plot-filtered-2.png" class="img-fluid" width="672"></p>
+</div>
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data_e, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="st">"blue3"</span>, <span class="at">lwd =</span> <span class="dv">3</span>, <span class="at">xlab =</span> <span class="st">"Date"</span>, <span class="at">ylab =</span> <span class="st">"Price"</span>, <span class="at">cex.lab =</span> <span class="fl">1.5</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main=</span><span class="st">"Ethereum Performance"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/plot-filtered-3.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Calcularea randamentului zilnic pentru cele 3 seturi de date.</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>b_returns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="fu">diff</span>(data_b<span class="sc">$</span>Price)<span class="sc">/</span>data_b<span class="sc">$</span>Price[<span class="sc">-</span><span class="fu">length</span>(data_b<span class="sc">$</span>Price)] <span class="sc">*</span><span class="dv">100</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>c_returns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="fu">diff</span>(data_c<span class="sc">$</span>price)<span class="sc">/</span>data_c<span class="sc">$</span>price[<span class="sc">-</span><span class="fu">length</span>(data_c<span class="sc">$</span>price)] <span class="sc">*</span><span class="dv">100</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>e_returns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="fu">diff</span>(data_e<span class="sc">$</span>Price)<span class="sc">/</span>data_e<span class="sc">$</span>Price[<span class="sc">-</span><span class="fu">length</span>(data_e<span class="sc">$</span>Price)] <span class="sc">*</span><span class="dv">100</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>data_b[<span class="st">"Returns %"</span>] <span class="ot">&lt;-</span> b_returns</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>data_c[<span class="st">"Returns %"</span>] <span class="ot">&lt;-</span> c_returns</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>data_e[<span class="st">"Returns %"</span>] <span class="ot">&lt;-</span> e_returns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Calcularea randamentului mediu, randamentului total, volatilității zilnice și a volatilității pe intervalul ales.</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>stock <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'CRIX'</span>,<span class="st">'Bitcoin'</span>, <span class="st">'Ethereum'</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>Randament_mediu <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">mean</span>(c_returns), <span class="fu">mean</span>(b_returns), <span class="fu">mean</span>(e_returns))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>Randament_total <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sum</span>(c_returns), <span class="fu">sum</span>(b_returns), <span class="fu">sum</span>(e_returns))</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>Volatilitate_medie <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sd</span>(data_c<span class="sc">$</span><span class="st">`</span><span class="at">Returns %</span><span class="st">`</span>), <span class="fu">sd</span>(data_b<span class="sc">$</span><span class="st">`</span><span class="at">Returns %</span><span class="st">`</span>), <span class="fu">sd</span>(data_e<span class="sc">$</span><span class="st">`</span><span class="at">Returns %</span><span class="st">`</span>))</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>Volatilitate_totala <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sd</span>(data_c<span class="sc">$</span><span class="st">`</span><span class="at">Returns %</span><span class="st">`</span>)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="dv">410</span>), <span class="fu">sd</span>(data_b<span class="sc">$</span><span class="st">`</span><span class="at">Returns %</span><span class="st">`</span>)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="dv">410</span>), <span class="fu">sd</span>(data_e<span class="sc">$</span><span class="st">`</span><span class="at">Returns %</span><span class="st">`</span>)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="dv">410</span>))</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(stock, Randament_mediu, Randament_total, Volatilitate_medie, Volatilitate_totala)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 23%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">stock</th>
+<th style="text-align: right;">Randament_mediu</th>
+<th style="text-align: right;">Randament_total</th>
+<th style="text-align: right;">Volatilitate_medie</th>
+<th style="text-align: right;">Volatilitate_totala</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CRIX</td>
+<td style="text-align: right;">0.6239915</td>
+<td style="text-align: right;">255.8365</td>
+<td style="text-align: right;">3.986145</td>
+<td style="text-align: right;">80.71328</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bitcoin</td>
+<td style="text-align: right;">0.5688461</td>
+<td style="text-align: right;">233.2269</td>
+<td style="text-align: right;">4.142477</td>
+<td style="text-align: right;">83.87877</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ethereum</td>
+<td style="text-align: right;">0.8085296</td>
+<td style="text-align: right;">331.4972</td>
+<td style="text-align: right;">5.458710</td>
+<td style="text-align: right;">110.53044</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Datele pe care le-am obținut se potrivesc cu cele obținute de o analiză a site-ului statista.com cu privire la variația volatilității a criptovalutelor</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.statista.com/chart/27577/cryptocurrency-volatility-dmo/"><img src="D:\Proiect%20Matematica%20Financiara\27577.jpeg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Variația volatilității a diferitor criptovalute</figcaption>
+</figure>
+</div>
+<p>Calcularea corelării CRIX-Bitcoin și CRIX-Ethereum</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sprintf</span>(<span class="st">"Corelarea dintre CRIX si Bitcoin este %f"</span>,<span class="fu">cor</span>(data_c<span class="sc">$</span><span class="st">`</span><span class="at">Returns %</span><span class="st">`</span>, data_b<span class="sc">$</span><span class="st">`</span><span class="at">Returns %</span><span class="st">`</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Corelarea dintre CRIX si Bitcoin este 0.965556"</code></pre>
+</div>
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sprintf</span>(<span class="st">"Corelarea dintre CRIX si Ethereum este %f"</span>,<span class="fu">cor</span>(data_c<span class="sc">$</span><span class="st">`</span><span class="at">Returns %</span><span class="st">`</span>, data_e<span class="sc">$</span><span class="st">`</span><span class="at">Returns %</span><span class="st">`</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Corelarea dintre CRIX si Ethereum este 0.801352"</code></pre>
+</div>
+</div>
+<p>Rezultatele confirmă intuiția pe care o aveam, anume că indicele CRIX este puternic influențat de cele mai puternice valute digitale de pe piață, Bitcoin și Ethereum (cu precădere mai puternic legat de Bitcoin). Observăm o corelare foarte puternică între Bitcoin și CRIX pe intervalul considerat - 0.96 și o corelare puternică între Ethereum și CRIX - 0.8</p>
+<p><br><br></p>
+<p>În continuare vom prezenta câteva aspecte din construcția indicelui CRIX. Prezentăm extrasuri din articolul „CRIX an Index for blockchain based Currencies” de Simon Trimborn și Wolfgang Karl Härdle.</p>
+</section>
+<section id="ii.-definiții-și-constrângeri" class="level4">
+<h4 class="anchored" data-anchor-id="ii.-definiții-și-constrângeri"><b><u>II. Definiții și Constrângeri</u></b></h4>
+<section id="definiția-pieței-totale-tm" class="level5">
+<h5 class="anchored" data-anchor-id="definiția-pieței-totale-tm"><b>1. Definiția Pieței Totale (TM)</b></h5>
+<p>În contextul proiectului nostru, Piața Totală (TM) reprezintă agregarea valorilor tuturor criptomonedelor din universul nostru de interes. Aceasta este calculată ca valoarea combinată a pieței fiecărei criptomonede într-un anumit moment de timp, ponderată în funcție de divizorul specific al pieței respective.</p>
+<p><span class="math display">\[
+\text{TM}(K)_t = \frac{\sum_{i=1}^{K} P_{it} Q_{i,t_{l}^{-}}}{\text{Divizor}(K)_{t_{l}^{-}}}
+\]</span></p>
+</section>
+<section id="definiția-rendimentelor-logaritmice" class="level5">
+<h5 class="anchored" data-anchor-id="definiția-rendimentelor-logaritmice"><b>2. Definiția Rendimentelor Logaritmice</b></h5>
+<p>Rendimentele logaritmice sunt o măsură esențială pentru analiza performanței pieței. Ele sunt definite ca logaritmii diferențiali ai valorilor pieței între două momente de timp consecutive, atât pentru Piața Totală (TM), cât și pentru Indicele CRIX.</p>
+<p><span class="math display">\[
+\begin{align*}\varepsilon(K)_t^{\text{TM}} &amp;= \log\{\text{TM}(K)_t\} - \log\{\text{TM}(K)_{t-1}\} \\\varepsilon(k, \beta)_t^{\text{CRIX}} &amp;= \log\{\text{CRIX}(k, \beta)_t\} - \log\{\text{CRIX}(k, \beta)_{t-1}\}\end{align*}
+\]</span></p>
+</section>
+<section id="obiectivul-de-optimizare" class="level5">
+<h5 class="anchored" data-anchor-id="obiectivul-de-optimizare"><b>3. Obiectivul de Optimizare</b></h5>
+<p>Scopul nostru principal este de a optimiza construcția Indicelui CRIX astfel încât să minimizăm eroarea dintre rendimentele logaritmice ale TM și CRIX. Acest obiectiv ne va ajuta să obținem un indice CRIX mai precis și mai eficient.</p>
+<p><span class="math display">\[
+\min_{k, \beta} \|\varepsilon(K)^{\text{TM}} - \varepsilon(k, \beta)^{\text{CRIX}}\|^2
+\]</span></p>
+</section>
+<section id="estimarea-densității" class="level5">
+<h5 class="anchored" data-anchor-id="estimarea-densității"><b>4. Estimarea Densității</b></h5>
+<p>Pentru a efectua analize statistice și pentru a selecta modele adecvate, este necesar să estimăm densitatea distribuției rendimentelor logaritmice. Folosind o metodă nonparametrică cu nucleu Epanechnikov, putem estima densitatea și să ne asigurăm că modelele noastre sunt bine fundamentate statistic.</p>
+<p><span class="math display">\[
+\text{Nucleul Epanechnikov}: \widehat{f}_{h}(x)=\frac{1}{nh} \sum_{i=1}^{n} \text{Epa}\left(\frac{x-x_{i}}{h}\right)
+\]</span></p>
+<p>Nucleul Epanechnikov este un tip de funcție de densitate.</p>
+<p>Funcția nucleului Epanechnikov este definită astfel:</p>
+<p><span class="math display">\[
+Epa(u) = \frac{3}{4} \left(1 - u^2\right) \mathbf{I}(|u| \leq 1)
+\]</span></p>
+<p>Alegerea acestuia este importantă în obținerea unei estimări precise a densității.</p>
+</section>
+<section id="construcția-tmi-indicele-pieței-totale" class="level5">
+<h5 class="anchored" data-anchor-id="construcția-tmi-indicele-pieței-totale"><b>5. Construcția TMI (Indicele Pieței Totale)</b></h5>
+<p>Pentru a obține o referință adecvată pentru evaluarea Indicelui CRIX, construim și utilizăm Indicele Pieței Totale (TMI). Acest indice reflectă performanța totală a pieței cripto și este calculat în mod similar cu TM, dar folosește doar criptomonede pentru care sunt disponibile prețurile.</p>
+<p><span class="math display">\[
+\text{TMI}_t(k_{\max}) = \frac{\sum_{i=1}^{k_{\max}} P_{it} Q_{i,t_{l}^{-}}}{\text{Divizor}(k_{\max})_{t_{l}^{-}}}
+\]</span></p>
+<p>,unde:</p>
+<ul>
+<li><p><span class="math inline">\(\text{TMI}_t(k_{\text{max}})\)</span> reprezintă valoarea Indicelui Pieței Totale la momentul <span class="math inline">\(t\)</span> , cu un număr maxim de constituente <span class="math inline">\(k_{\text{max}}\)</span>.</p></li>
+<li><p><span class="math inline">\(P_{it}\)</span> reprezintă prețul criptomonedei <span class="math inline">\(i\)</span> la momentul <span class="math inline">\(t\)</span>.</p></li>
+<li><p><span class="math inline">\(Q_{i,t_{l}^{-}}\)</span> reprezintă capitalizarea de piață a criptomonedei <span class="math inline">\(i\)</span> la momentul <span class="math inline">\(t\)</span> sau o măsură a valorii totale a criptomonedei pe piață.</p></li>
+<li><p><span class="math inline">\(\text{Divizor}(k_{\text{max}})_{t_{l}^{-}}\)</span> reprezintă un divizor specific pentru indicele TMI la momentul <span class="math inline">\(t\)</span> care poate fi utilizat pentru a ajusta valoarea totală a indicelui.</p></li>
+</ul>
+</section>
+<section id="constrângerile-construcției-indicelui" class="level5">
+<h5 class="anchored" data-anchor-id="constrângerile-construcției-indicelui"><b>6. Constrângerile Construcției Indicelui</b></h5>
+<p>În procesul de optimizare a construcției Indicelui CRIX, trebuie să luăm în considerare o serie de constrângeri, inclusiv numărul optim de constituente (k) și parametri <span class="math inline">\((\beta)\)</span>. Aceste constrângeri asigură că indicele rezultat este robust și relevant pentru piața cripto.</p>
+<p><span class="math display">\[
+\min_{k, \beta} \|\varepsilon(k_{\max})^{\text{TM}} - \varepsilon(k, \beta)^{\text{CRIX}}\|^2 \text{ s.t.: } \begin{cases} 1 \leq k \leq k^{u} \\k^{u} \in [1, k_{\max}] \\s \in [1, k_{\max}-k] \\\beta^{1 \times(k+s)} = (1, ..., 1, \beta_{k+1}, ..., \beta_{k+s})^{\top} \\\beta_{k+1}, ..., \beta_{k+s} \in (-\infty, \infty)\end{cases}
+\]</span></p>
+</section>
+<section id="criteriile-de-optimizare" class="level5">
+<h5 class="anchored" data-anchor-id="criteriile-de-optimizare"><b>7. Criteriile de Optimizare</b></h5>
+<p>Pentru a alege modelul optim, trebuie să evaluăm o serie de criterii de optimizare, inclusiv validarea încrucișată, criteriul Mallows’ Cp și altele. Alegerea criteriilor adecvate este esențială pentru obținerea unui indice CRIX optim.</p>
+</section>
+<section id="validarea-încrucișată-cv" class="level5">
+<h5 class="anchored" data-anchor-id="validarea-încrucișată-cv"><b>7.1. Validarea Încrucișată (CV)</b></h5>
+<p>CV este un criteriu larg utilizat, care evaluează performanța modelului prin compararea valorilor prezise cu cele observate într-un set de date de validare.</p>
+<p><span class="math display">\[
+\text{CV}(k, \beta) = \frac{1}{T} \sum_{i=1}^{T} \left\{ \varepsilon\left(k_{\max}\right)_{t}^{TM} - \varepsilon(k, \beta)_{-t}^{CRIX} \right\}^{2}
+\]</span></p>
+</section>
+<section id="criteriul-mallows-cp" class="level5">
+<h5 class="anchored" data-anchor-id="criteriul-mallows-cp"><b>7.2. Criteriul Mallows (Cp)</b></h5>
+<p>Cp este un criteriu care penalizează modelele care au prea mulți termeni, contribuind astfel la selecția unui model mai simplu și mai generalizabil.</p>
+<p><span class="math display">\[
+\text{Cp}(\widehat{\varepsilon}(k, \beta), s) = \frac{\sum_{t=1}^{T} \widehat{\varepsilon}(k, \beta)_{t}^{2}}{\widehat{\sigma}(k, \beta)^{2}} - T + 2 \cdot s
+\]</span></p>
+</section>
+<section id="validarea-încrucișată-generalizată-gcv" class="level5">
+<h5 class="anchored" data-anchor-id="validarea-încrucișată-generalizată-gcv"><b>7.3. Validarea Încrucișată Generalizată (GCV)</b></h5>
+<p>GCV este o variantă a validării încrucișate care ajustează penalizarea pentru numărul de termeni, oferind o evaluare mai robustă a performanței modelului.</p>
+<p><span class="math display">\[
+\text{GCV}\{\widehat{\varepsilon}(k, \beta), s\} = \frac{T^{-1} \sum_{t=1}^{T} \widehat{\varepsilon}(k, \beta)_{t}^{2}}{\left(1-T^{-1} s\right)^{2}}
+\]</span></p>
+</section>
+</section>
+</section>
+<section id="discuții-și-concluzii" class="level2">
+<h2 class="anchored" data-anchor-id="discuții-și-concluzii">Discuții și Concluzii</h2>
+<p>Studierea întregii piețe de criptomonede necesită un instrument care să surprindă și să afișeze în mod adecvat mișcările pieței, un indice cripto.</p>
+<p>Într-o piață nouă și foarte volatilă este util să existe un indice care cuantifică performanța ei. Astfel investitorii pot avea o măsură după care să se ghideze atunci când vor să investească. Faptul că acest index există denotă maturitatea la care a ajuns piața cripto în prezent.</p>
+<p>Prin analiza noastră am demonstrat influența puternică pe care Bitcoin și Ethereum le au asupra acestui indice de piață, prin analiza unui segment de timp relevant cu un randament și volatilitate foarte mare.</p>
+<p><br><br></p>
+<section id="referințe" class="level5">
+<h5 class="anchored" data-anchor-id="referințe">Referințe</h5>
+<p>(1) <a href="https://d-nb.info/1189829010/34" class="uri">https://d-nb.info/1189829010/34</a></p>
+<p>(2) <a href="https://www.thecrix.de/" class="uri">https://www.thecrix.de/</a></p>
+<p>(3) <a href="https://www.investing.com/crypto/ethereum/historical-data" class="uri">https://www.investing.com/crypto/ethereum/historical-data</a></p>
+<p>(4) <a href="https://www.investing.com/crypto/bitcoin/historical-data" class="uri">https://www.investing.com/crypto/bitcoin/historical-data</a></p>
+<p>(5) <a href="https://www.statista.com/chart/27577/cryptocurrency-volatility-dmo/" class="uri">https://www.statista.com/chart/27577/cryptocurrency-volatility-dmo/</a></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
