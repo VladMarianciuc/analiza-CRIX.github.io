@@ -25,6 +25,14 @@ jobs:
       - name: Install R Dependencies
         uses: r-lib/actions/setup-renv@v2
         with:
+          packages:
+            any::knitr
+            any::rmarkdown
+            any::downlit
+            any::xml2
+            any::tidyverse
+            any::jsonlite
+            any::readr
           cache-version: 1
 
       - name: Render and Publish
