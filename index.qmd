@@ -21,7 +21,7 @@ Acest indice se numește CRIX (CRyptocurrency IndeX) și a fost gândit de o ech
 
 Luând în considerare că două din cele mai cunoscute și tranzacționate valute pe piața cripto sunt Bitcoin și Ethereum (și cele mai vechi), ne putem întrebarile:
 
-1.  Cât de mult se asemeană evoluția acestor monede cu performanța pe care o indică indicele CRIX ?
+1.  Cât de mult se aseamănă evoluția acestor monede cu performanța pe care o indică indicele CRIX ?
 
 2.  Care este corelarea dintre indicele CRIX și Bitcoin, respectiv Ethereum?
 
