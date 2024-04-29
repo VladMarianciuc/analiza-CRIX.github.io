@@ -172,7 +172,7 @@ kable(df)
 
 Datele pe care le-am obținut se potrivesc cu cele obținute de o analiză a site-ului statista.com cu privire la variația volatilității a criptovalutelor
 
-[![Variația volatilității a diferitor criptovalute](D:\Proiect%20Matematica%20Financiara\27577.jpeg){.lightbox}](https://www.statista.com/chart/27577/cryptocurrency-volatility-dmo/)
+[![Variația volatilității a diferitor criptovalute](https://cdn.statcdn.com/Infographic/images/normal/27577.jpeg){.lightbox}](https://www.statista.com/chart/27577/cryptocurrency-volatility-dmo/)
 
 Calcularea corelării CRIX-Bitcoin și CRIX-Ethereum
 
