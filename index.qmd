@@ -62,9 +62,12 @@ Datele CRIX le-am luat de pe thecrix.de iar datele Bitcoin și Ethereum le-am lu
 
 json_file <- "http://data.thecrix.de/data/crix.json"
 data_crix <- fromJSON(json_file)
+data_crix <- tail(data_crix, 2148)
+
 
 data_btc <- read.csv("H:\\My Drive\\Matematica\\Proiect Analiza Financiara\\Bitcoin Historical Data (1).csv")
 data_btc <- data_btc[-c(3:7)]
+data_btc <- head(data_btc, 2148)
 
 data_eth <- read.csv("H:\\My Drive\\Matematica\\Proiect Analiza Financiara\\Ethereum Historical Data.csv")
 data_eth <- data_eth[-c(3:7)]
