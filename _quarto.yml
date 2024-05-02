@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Analiza CRIX"
+  title: "Analiza CRIX "
   site-url: https://www.analiza-CRIX.com
   navbar:
     left:
