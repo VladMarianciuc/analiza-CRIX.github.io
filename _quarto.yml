@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Analiza CRIX"
+  title: "Analiza crix"
   navbar:
     left:
       - href: index.qmd
