@@ -2,7 +2,8 @@ project:
   type: website
 
 website:
-  title: "analiza-CRIX.github.io"
+  title: "Analiza CRIX"
+  site-url: https://www.analiza-CRIX.com
   navbar:
     left:
       - href: index.qmd
