@@ -3,7 +3,6 @@ project:
 
 website:
   title: "Analiza CRIX"
-  site-url: https://www.analiza-CRIX.com
   navbar:
     left:
       - href: index.qmd
